@@ -150,9 +150,9 @@ val ans = "neither: 42" : string
 ```
 
 #### Let-bindings
-Let-bindings are used to bind identifiers with values or types and to then evaluate an expression in the same scope.
+Let-bindings are used to bind identifiers with values or types and to then evaluate an expression in the augmented scope.
 
-The syntax is `let <decs> in e end`, where `<decs>` is a series of zero or more declarations, which are discussed further in the section on [declarations](types/declarations), and `e` is the expression to return.
+The syntax is `let <decs> in e end`, where `<decs>` is a series of zero or more declarations, which are discussed further in the section on [declarations](basics/declarations), and `e` is the expression to return.
 
 **Example**
 ```Gemini
