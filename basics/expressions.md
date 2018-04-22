@@ -164,3 +164,48 @@ The syntax is `let <decs> in e end`, where `<decs>` is a series of zero or more 
 ..  end
 val ans = "Aditya is 21 years old" : string
 ```
+
+### Hardware
+Next we describe the syntax for declaring hardware-typed expressions.
+
+> One thing to note is that although we use the term "expression" here, there is no such thing as a hardware expression. All hardware-typed entities are values since they cannot be reduced any further.
+
+#### Operations
+In addition to software operators, there are hardware operators that compute on hardware-typed values.
+
+A complete list of the operators and their semantic results is shown below.
+
+##### Bitwise
+
+> Note: these operators may be applied to any hardware type and the operator is applied to all inner-bits in a pervasive manner. For binary operators, the two types must be the same.
+
+| Operator | Type | Syntax | Semantic Result |
+| --- | --- | --- | --- |
+| `!` | `'a ~> 'a` | `!e` | Negation of operand  |
+| `&` | `'a #* 'a ~> 'a` | `e1 & e2` | Bitwise logical "and" of composing bits |
+| <code>&#124;</code> | `'a #* 'a ~> 'a` | <code>e1 &#124; e2</code> | Bitwise logical "or" of composing bits |
+| `^` | `'a #* 'a ~> 'a` | `e1 ^ e2` | Bitwise logical "xor" of composing bits |
+
+##### Shifting
+
+| Operator | Type | Syntax | Semantic Result |
+| --- | --- | --- | --- |
+| `<<` | `bit[n] #* bit[m] ~> bit[n]` | `e1 << e2` | Shifts left bit array operand to the left by the amount specified (as an unsigned integer) by the right bit array |
+| `>>` | `bit[n] #* bit[m] ~> bit[n]` | `e1 >> e2` | Shifts left bit array operand to the right by the amount specified (as an unsigned integer) by the right bit array, filling with zero bit value |
+| `>>>` | `bit[n] #* bit[m] ~> bit[n]` | `e1 >>> e2` | Shifts left bit array operand to the right by the amount specified (as an unsigned integer) by the right bit array, filling with most significant bit value |
+
+##### Reduction
+
+| Operator | Type | Syntax | Semantic Result |
+| --- | --- | --- | --- |
+| `&->` | `bit[n] ~> bit` | `&->e` | Bitwise and-reduction of bit array operand |
+| <code>&#124;-></code> | `bit[n] ~> bit` | <code>&#124;->e</code> | Bitwise or-reduction of bit array operand |
+| `^->` | `bit[n] ~> bit` | `^->e` | Bitwise xor-reduction of bit array operand |
+
+##### Collapse
+
+| Operator | Type | Syntax | Semantic Result |
+| --- | --- | --- | --- |
+| `&&` | `bit[n] #* bit[n] ~> bit` | `e1 && e2` | Or-reduction of both bit array operands, followed by bitwise logical "and" of resulting bits |
+| <code>&#124;&#124;</code> | `bit[n] #* bit[n] ~> bit` | <code>e1 &#124;&#124; e2</code> | Or-reduction of both bit array operands, followed by bitwise logical "or" of resulting bits |
+| `^^` | `bit[n] #* bit[n] ~> bit` | `e1 ^^ e2` | Or-reduction of both bit array operands, followed by bitwise logical "xor" of resulting bits |
