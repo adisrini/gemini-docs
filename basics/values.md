@@ -145,6 +145,24 @@ val ans = #['b:1, 'b:0, 'b:1, 'b:0] : bit[4]
 val ans = #[#['b:0, 'b:0], #['b:0, 'b:1], #['b:1, 'b:0], #['b:1, 'b:1]] : bit[2][4]
 ```
 
+A common conversion to make is from a number to its binary representation. Gemini enables these conversions in two forms: unsigned and signed. The number appearing before the apostrophe indicates the length of the resulting array, and the number to the right of the colon indicates the number convert.
+
+**Example**
+```Gemini
+::> 4'u:6
+val ans = #['b:0, 'b:1, 'b:1, 'b:0] : bit[4]
+::> 6's:~4
+val ans = #['b:1, 'b:1, 'b:1, 'b:1, 'b:0, 'b:0] : bit[6]
+```
+
+The last way of declaring arrays allows for value comprehension. It takes the form `#[n; gen i => genexp]`, where `n` is an integer-typed value representing the length of the array and `genexp` is a an expression that can reference the index `i` in computing a hardware-typed value. An example is shown below.
+
+**Example**
+```Gemini
+::> #[4; gen i => 2'u:i]
+val ans = #[#['b:0, 'b:0], #['b:0, 'b:1], #['b:1, 'b:0], #['b:1, 'b:1]] : bit[2][4]
+```
+
 #### Hardware Labeled Records
 These are similar to software labeled records, except the values must be hardware-typed. The syntax for declaration is almost identical, except it is prefixed with the pound symbol (`#`).
 
