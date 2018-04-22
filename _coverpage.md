@@ -4,9 +4,9 @@
 
 > A functional hardware description language.
 
+* Powerful, expressive, and modular
 * Do more with less code
 * Easy to learn
-* Powerful and expressive
 
 [GitHub](https://github.com/adisrini/gemini-lang/)
 [Get Started](#gemini)

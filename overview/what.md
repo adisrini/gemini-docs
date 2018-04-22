@@ -12,6 +12,8 @@ Gemini was influenced heavily by the functional paradigm and borrows many featur
 
 Although Gemini is similar in appearance to a high-level software programming language, programs are transformed by the Gemini compiler into modules in Verilog, a popular contemporary hardware description language, which can then be verified, simulated, and synthesized.
 
+---
+
 Gemini boasts many features that enable a high degree of expressivity and modularity, such as:
 * type inference
 * parametric polymorphism
