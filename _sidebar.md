@@ -9,6 +9,7 @@
   * [Types](basics/types.md)
   * [Values](basics/values.md)
   * [Expressions](basics/expressions.md)
+  * [Declarations](basics/declarations.md)
   * [Comments](basics/comments.md)
 
 * Library

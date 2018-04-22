@@ -23,7 +23,6 @@ In the section talking about [what makes Gemini unique](overview/unique.md), we 
 | bit     | `bit`     |
 | array of T<sub>H</sub>   | T<sub>H</sub> `[n]` |
 | temporal of T<sub>H</sub>    | T<sub>H</sub> `@ n`  |
-| software-wrapped T<sub>H</sub>    | T<sub>H</sub> `sw`  |
 | labeled record | `#{a: ` T<sub>H1</sub>, ..., `z: ` T<sub>Hn</sub>`}` |
 | unlabeled record (tuple) | T<sub>H1</sub> `#*` ... `#*` T<sub>Hn</sub> |
 
@@ -31,4 +30,4 @@ In the section talking about [what makes Gemini unique](overview/unique.md), we 
 
 | Type        | Syntax    |
 | ----------- | --------- |
-| module from T<sub>H1</sub> to T<sub>H2</sub> | T<sub>H1</sub> `->` T<sub>H2</sub> |
+| module from T<sub>H1</sub> to T<sub>H2</sub> | T<sub>H1</sub> `~>` T<sub>H2</sub> |
